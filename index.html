@@ -1,125 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poorna Devi Mahalingam | Cyber Security Analyst</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-/* RESET & BASE */
-*{margin:0;padding:0;box-sizing:border-box;}
-html,body{height:100%;font-family:'Poppins',sans-serif;background:#0f001e;color:#e7e3f8;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;}
-section{padding:60px 6%;max-width:1100px;margin:0 auto;}
-h2{font-size:1.8rem;margin-bottom:18px;color:#d2b3ff;}
-.card{background:rgba(255,255,255,0.05);border:1px solid rgba(160,110,255,0.08);padding:20px;border-radius:12px;margin-bottom:16px;transition:0.3s;}
-.card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(120,50,255,0.15);}
-.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poorna Devi Mahalingam | Cyber Security Analyst</title>
 
-/* NAVBAR */
-nav{position:fixed;top:0;left:0;right:0;padding:16px 40px;background:rgba(0,0,0,0.25);backdrop-filter:blur(6px);display:flex;justify-content:space-between;align-items:center;z-index:1000;}
-nav .brand{font-weight:700;color:#e5d7ff;}
-nav .links a{margin:0 12px;font-weight:500;}
-nav .links a:hover{color:#fff;}
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* HERO */
-.hero{padding-top:120px;text-align:center;min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;}
-.photo-box{width:180px;height:180px;border-radius:50%;background:#444;background-size:cover;margin-bottom:16px;}
-.shield-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 40% 30%,rgba(140,60,255,0.22),transparent 40%);filter:blur(30px);pointer-events:none;}
-.hero h1{font-size:2.2rem;margin-bottom:8px;}
-.cta{margin-top:16px;background:#6a00ff;padding:10px 20px;border-radius:10px;font-weight:600;color:#fff;display:inline-block;}
+    <style>
+        /* Reset & base */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{
+            font-family:'Poppins',sans-serif;
+            background:linear-gradient(180deg,#0f001e 0%,#1a0033 50%,#07000f 100%);
+            color:#e7e3f8;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            overflow-x:hidden;
+        }
 
-/* SOCIAL LINKS */
-.social a{margin-right:12px;font-weight:600;color:#caa8ff;}
-.social a:hover{color:#fff;}
+        /* NAVBAR */
+        nav{position:fixed;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(0,0,0,0.25);backdrop-filter:blur(6px);z-index:2000}
+        nav .brand{font-weight:700;color:#e5d7ff}
+        nav .links a{color:#cfc7ff;margin:0 12px;text-decoration:none;font-weight:500}
+        nav .links a:hover{color:#fff}
 
-/* LIGHT MODE TOGGLE */
-.toggle-btn{position:fixed;right:20px;bottom:20px;background:#7a35ff;color:#fff;padding:10px 16px;border-radius:20px;cursor:pointer;font-weight:600;}
-.light-mode{background:#f8f4ff!important;color:#1c0030!important;}
-.light-mode .card{background:#fff!important;color:#1c0030;}
-.light-mode nav{background:#e0dfff!important;color:#1c0030;}
+        /* HERO */
+        .hero{padding-top:120px;text-align:center;position:relative;min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+        .photo-box{width:180px;height:180px;border-radius:50%;border:2px solid rgba(157,125,255,0.25);background:rgba(255,255,255,0.03);display:block;background-position:center;background-size:cover}
+        .shield-glow{position:absolute;top:calc(50% - 20px);left:50%;transform:translate(-50%,-50%);width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 40% 30%,rgba(140,60,255,0.22),transparent 40%);filter:blur(30px);pointer-events:none}
+        .hero h1{font-size:2.4rem;margin-top:18px;letter-spacing:0.4px}
+        .typing-text{display:inline-block;border-right:3px solid #bb86ff;white-space:nowrap;overflow:hidden;width:0;animation:typing 3.5s steps(30,end) forwards,blink .8s infinite;max-width:560px}
+        @keyframes typing{from{width:0}to{width:240px}}@keyframes blink{50%{border-color:transparent}}
+        .cta{margin-top:18px;display:inline-block;background:#6a00ff;padding:10px 22px;border-radius:10px;color:#fff;text-decoration:none;font-weight:600}
 
-/* RESPONSIVE */
-@media(max-width:600px){.hero h1{font-size:1.6rem}.photo-box{width:130px;height:130px;} nav{padding:12px 18px;}}
-</style>
+        /* SECTIONS */
+        section{padding:60px 6%;max-width:1100px;margin:0 auto}
+        h2{font-size:1.8rem;margin-bottom:18px;color:#d2b3ff}
+        .card{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border:1px solid rgba(160,110,255,0.08);padding:22px;border-radius:14px;margin-bottom:18px;transition:transform .25s ease,box-shadow .25s ease}
+        .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(120,50,255,0.18)}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+
+        /* SOCIAL */
+        .social a{margin-right:12px;color:#caa8ff;font-weight:600;text-decoration:none}
+
+        /* CYBER ICONS */
+        .icons-row{text-align:center;margin-top:20px}
+        .cyber-icon{width:64px;height:64px;margin:8px;filter:drop-shadow(0 0 12px rgba(166,107,255,0.45));animation:floaty 3.2s ease-in-out infinite}
+        @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+
+        /* MATRIX CANVAS */
+        canvas.matrix{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-2;opacity:0.22}
+
+        /* PARTICLES (small sparks) */
+        .particle{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;opacity:.9}
+
+        /* FOOTER */
+        footer{text-align:center;padding:28px 10px;background:transparent;color:#cfc7ff}
+
+        /* TOGGLE */
+        .toggle-btn{position:fixed;right:22px;bottom:22px;background:#7a35ff;color:#fff;padding:10px 16px;border-radius:20px;cursor:pointer;z-index:3000;font-weight:600}
+        .light-mode{background:#f8f4ff!important;color:#1c0030!important}
+        .light-mode .card{background:#fff!important;color:#1c0030}
+
+        /* RESPONSIVE */
+        @media(max-width:600px){nav{padding:12px 18px} .hero h1{font-size:1.6rem} .photo-box{width:130px;height:130px}}
+    </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="brand">PDM</div>
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#internships">Internships</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <div class="brand">PDM</div>
+    <div class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#internships">Internships</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
+<!-- MATRIX BACKGROUND REMOVED -->
+
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="shield-glow"></div>
-  <div class="photo-box" style="background-image:url('https://via.placeholder.com/180')" aria-label="Profile Photo"></div>
-  <h1>Poorna Devi Mahalingam</h1>
-  <p>Cyber Security Analyst</p>
-  <a class="cta" href="#">Download Resume</a>
+    <div class="shield-glow" aria-hidden="true"></div>
+    <div class="photo-box" id="profilePhoto" style="background-image:url('your-profile.jpg')" aria-label="Profile photo placeholder"></div>
+    <h1 class="name" aria-label="Name">Poorna Devi Mahalingam</h1>
+    <p class="typing-text" aria-hidden="false">Cyber Security Analyst</p>
+    <a class="cta" href="Resume.pdf" download>Download Resume</a>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <h2>About Me</h2>
-  <div class="card">A dedicated professional with strong responsibility and consistency. Passionate about solving problems, delivering high‑quality work, and growing into a Cybersecurity Expert.</div>
+    <h2>About Me</h2>
+    <div class="card">A dedicated professional with strong responsibility and consistency. Passionate about solving problems, delivering high‑quality work, and growing into a Cybersecurity Expert.</div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
-  <h2>Skills</h2>
-  <div class="grid-2">
-    <div class="card"><strong>Languages & Tools</strong><br>C, C++, Python, Nmap, Wireshark, n8n</div>
-    <div class="card"><strong>AI & Automation</strong><br>Agentic AI, Prompt Engineering</div>
-    <div class="card"><strong>Operating Systems</strong><br>Windows, Linux</div>
-    <div class="card"><strong>Expertise</strong><br>Bug Analysis, Security Reporting, Logical Thinking</div>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="card">B.E CSE (IoT & Cyber Security & Blockchain) — SNS College of Engineering — CGPA: 8.30</div>
-  <div class="card">Higher Secondary — 82.16%</div>
-  <div class="card">SSLC — Annai Matriculation School</div>
-</section>
-
-<section id="internships">
-  <h2>Internships</h2>
-  <div class="card">TechnoHacks — Cyber Security Intern (Aug–Sept 2024)</div>
-  <div class="card">Teachnook — Cyber Security Intern</div>
-  <div class="card">Cognifyz Technology — Python Development Intern</div>
-  <div class="card">Prompt Infotech — Cyber Security Intern (June 2025)</div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="grid-2">
-    <div class="card"><strong>Phishing Website Detector</strong><br>Python + ML phishing detection tool.</div>
-    <div class="card"><strong>Food Ordering App</strong><br>Order management & delivery workflow.</div>
-    <div class="card"><strong>Agricultural Machine Rental</strong><br>Platform for renting farm equipment.</div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    📧 poorna7708@gmail.com<br>📱 +91 93425 68524<br>📍 Coimbatore, Tamil Nadu
-    <div class="social">
-      <a href="#">LinkedIn</a>
-      <a href="#">GitHub</a>
-      <a href="#">LeetCode</a>
+    <h2>Skills</h2>
+    <div class="grid-2">
+        <div class="card"><strong>Languages & Tools</strong><br>C, C++, Python, Nmap, Wireshark, n8n</div>
+        <div class="card"><strong>AI & Automation</strong><br>Agentic AI, Prompt Engineering</div>
+        <div class="card"><strong>Operating Systems</strong><br>Windows, Linux</div>
+        <div class="card"><strong>Expertise</strong><br>Bug Analysis, Security Reporting, Logical Thinking</div>
     </div>
-  </div>
+
+    <!-- Animated cyber icons row -->
+    <div class="icons-row" aria-hidden="true">
+        <img src="shield.png" alt="shield icon" class="cyber-icon">
+        <img src="lock.png" alt="lock icon" class="cyber-icon">
+        <img src="circuit.png" alt="circuit icon" class="cyber-icon">
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2>Education</h2>
+    <div class="card">B.E CSE (IoT & Cyber Security & Blockchain) — SNS College of Engineering — CGPA: 8.30</div>
+    <div class="card">Higher Secondary — 82.16%</div>
+    <div class="card">SSLC — Annai Matriculation School</div>
+</section>
+
+<!-- INTERNSHIPS -->
+<section id="internships">
+    <h2>Internships</h2>
+    <div class="card">TechnoHacks — Cyber Security Intern (Aug–Sept 2024)</div>
+    <div class="card">Teachnook — Cyber Security Intern</div>
+    <div class="card">Cognifyz Technology — Python Development Intern</div>
+    <div class="card">Prompt Infotech — Cyber Security Intern (June 2025)</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="grid-2">
+        <div class="card">Phishing Attack Workshop</div>
+        <div class="card">Cyber Security</div>
+        <div class="card">AIML Workshop</div>
+        <div class="card">Cloud Computing</div>
+        <div class="card">Networking</div>
+        <div class="card">Product Management</div>
+        <div class="card">Python, C Programming</div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="grid-2">
+        <div class="card"><strong>Phishing Website Detector</strong><br>Python + ML phishing detection tool.</div>
+        <div class="card"><strong>Food Ordering App</strong><br>Order management & delivery workflow.</div>
+        <div class="card"><strong>Agricultural Machine Rental</strong><br>Platform for renting farm equipment.</div>
+    </div>
+    <!-- placeholders for your 2 additional photos -->
+    <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px"><img src="your-photo-2.jpg" alt="Photo 2 placeholder" style="width:100%;border-radius:10px"></div>
+        <div style="flex:1;min-width:220px"><img src="your-photo-3.jpg" alt="Photo 3 placeholder" style="width:100%;border-radius:10px"></div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">📧 poorna7708@gmail.com<br>📱 +91 93425 68524<br>📍 Coimbatore, Tamil Nadu
+        <div style="margin-top:12px" class="social">
+            <a href="https://www.linkedin.com/in/poorna-devi-m-snsinstitutions/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/poorna-03" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://leetcode.com/u/Poorna35/" target="_blank" rel="noopener">LeetCode</a>
+        </div>
+    </div>
 </section>
 
 <footer>© 2025 Poorna Devi Mahalingam | Cyber Security Analyst</footer>
 
-<div class="toggle-btn" onclick="document.body.classList.toggle('light-mode')">Toggle Theme</div>
+<!-- MATRIX SCRIPT REMOVED -->
+
+<!-- PARTICLES SCRIPT REMOVED -->
+
+<!-- THEME TOGGLE -->
+<div class="toggle-btn" onclick="toggleMode()" role="button" aria-pressed="false">Toggle Theme</div>
+<script>
+function toggleMode(){
+    document.body.classList.toggle('light-mode');
+}
+</script>
 
 </body>
 </html>
+
 
