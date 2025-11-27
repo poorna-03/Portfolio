@@ -9,25 +9,10 @@
     
     <link rel="stylesheet" href="style.css">
     
-    </head>
+</head>
 <body>
 
 <canvas class="matrix"></canvas>
-<script src="matrix-effect.js"></script>
-<script>
-    // Your existing toggleMode script
-    const body = document.body;
-    const toggleButton = document.getElementById('themeToggle');
-
-    function toggleMode(){
-        const isLight = body.classList.toggle('light-mode');
-        toggleButton.textContent = isLight ? 'Toggle Dark Mode' : 'Toggle Light Mode';
-        toggleButton.setAttribute('aria-pressed', isLight);
-    }
-</script>
-
-</body>
-</html>
 
 <nav>
     <div class="brand">Poorna</div>
@@ -186,6 +171,9 @@
 
 
 <div class="toggle-btn" id="themeToggle" onclick="toggleMode()" role="button" aria-pressed="false">Toggle Light Mode</div>
+
+<script src="matrix-effect.js"></script>
+
 <script>
     const body = document.body;
     const toggleButton = document.getElementById('themeToggle');
@@ -200,5 +188,3 @@
 
 </body>
 </html>
-
-
