@@ -1,0 +1,382 @@
+/* ======================== */
+/* 0. BASE & RESET          */
+/* ======================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth; /* ADDED: Smooth scrolling */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Updated gradient for depth */
+    background: linear-gradient(180deg, #0f001e 0%, #1a0033 50%, #07000f 100%);
+    color: #e7e3f8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background 0.4s ease; /* For smooth light mode transition */
+}
+
+/* ======================== */
+/* 1. NAVBAR                */
+/* ======================== */
+nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(0, 0, 0, 0.3); /* Slightly darker for better contrast */
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+}
+
+nav .brand {
+    font-weight: 700;
+    color: #bb86ff; /* Accent color for the brand */
+    font-size: 1.4rem;
+}
+
+nav .links a {
+    color: #cfc7ff;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav .links a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #bb86ff;
+}
+
+/* ======================== */
+/* 2. HERO SECTION          */
+/* ======================== */
+.hero {
+    padding-top: 120px;
+    text-align: center;
+    position: relative;
+    min-height: 80vh; /* Increased height for impact */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-box {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid rgba(157, 125, 255, 0.4); /* Thicker, slightly brighter border */
+    background: rgba(255, 255, 255, 0.05);
+    display: block;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 15px rgba(120, 50, 255, 0.5); /* Added subtle shadow for depth */
+}
+
+.shield-glow {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px; /* Increased size */
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 30%, rgba(140, 60, 255, 0.35), transparent 45%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 2.6rem; /* Slightly larger heading */
+    margin-top: 18px;
+    letter-spacing: 0.5px;
+    color: #d2b3ff;
+}
+
+.typing-text {
+    display: inline-block;
+    border-right: 3px solid #bb86ff;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    /* Use the variable defined in HTML for animation */
+    animation: typing 3.5s steps(30, end) forwards, blink 0.8s infinite; 
+    max-width: 560px;
+    font-size: 1.1rem;
+    color: #bb86ff; /* Accent color for the profession */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    /* Use CSS variable if supported, falling back to fixed value */
+    to { width: var(--typing-width, 240px) } 
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+.cta {
+    margin-top: 25px; /* More space */
+    display: inline-block;
+    background: #6a00ff;
+    padding: 12px 28px; /* Larger button */
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: 1px solid #6a00ff;
+}
+
+.cta:hover {
+    background: #5200cc;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(106, 0, 255, 0.4); /* Subtle shadow on hover */
+}
+
+/* ======================== */
+/* 3. SECTIONS & CARDS      */
+/* ======================== */
+section {
+    padding: 80px 6%; /* Increased padding for better separation */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.1rem; /* Slightly larger headings */
+    margin-bottom: 25px;
+    color: #d2b3ff;
+    border-bottom: 2px solid rgba(160, 110, 255, 0.2); /* Subtle line separator */
+    padding-bottom: 8px;
+}
+
+.icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #bb86ff;
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(160, 110, 255, 0.1);
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    line-height: 1.6;
+}
+
+.card strong {
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+/* Enhanced Neon Hover Effect */
+.card:hover {
+    transform: translateY(-8px); /* Deeper lift */
+    box-shadow: 0 0 30px rgba(120, 50, 255, 0.45); /* Stronger, broader neon glow */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.05));
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider minimum width */
+    gap: 25px; /* More gap */
+}
+
+/* Detail Styling */
+.detail, .skill-list {
+    color: #b9b3cc;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.detail-list {
+    margin-left: 20px;
+    padding-top: 8px;
+    list-style-type: '⚡ '; /* Custom list marker */
+}
+
+.detail-list li {
+    margin-bottom: 4px;
+    color: #e7e3f8;
+}
+
+/* Project/Tech Link Styling */
+.tech-stack, .project-link {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #a788ff;
+}
+.tech-stack strong {
+    color: #d2b3ff;
+}
+.project-link a {
+    color: #bb86ff;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dashed #bb86ff;
+    transition: color 0.2s;
+}
+.project-link a:hover {
+    color: #fff;
+    border-bottom-style: solid;
+}
+
+
+/* ======================== */
+/* 4. SOCIAL & FOOTER       */
+/* ======================== */
+.social a {
+    margin-right: 15px;
+    color: #caa8ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.social a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #bb86ff;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #cfc7ff;
+    font-size: 0.9rem;
+}
+
+
+/* ======================== */
+/* 5. CYBER EFFECTS         */
+/* ======================== */
+/* MATRIX CANVAS */
+canvas.matrix {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.2; /* Slightly more subtle */
+}
+
+/* ======================== */
+/* 6. THEME TOGGLE (LIGHT MODE) */
+/* ======================== */
+.toggle-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: #7a35ff;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 3000;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.light-mode {
+    background: #f8f4ff !important;
+    color: #1c0030 !important;
+}
+.light-mode nav {
+    background: rgba(255, 255, 255, 0.8);
+}
+.light-mode h2 {
+    color: #4b009e;
+    border-bottom-color: rgba(75, 0, 158, 0.1);
+}
+.light-mode .card {
+    background: #fff !important;
+    color: #1c0030;
+    border-color: rgba(75, 0, 158, 0.1);
+}
+.light-mode .card:hover {
+    box-shadow: 0 10px 30px rgba(75, 0, 158, 0.15); /* Subtler shadow for light mode */
+    transform: translateY(-4px);
+}
+.light-mode .detail, .light-mode .skill-list, .light-mode .detail-list li {
+    color: #444;
+}
+.light-mode .typing-text {
+    color: #4b009e;
+    border-right-color: #4b009e;
+}
+.light-mode .social a {
+    color: #4b009e;
+}
+.light-mode .social a:hover {
+    text-shadow: none;
+    color: #7a35ff;
+}
+.light-mode footer {
+    background: #f0ebfa;
+    color: #444;
+}
+.light-mode .project-link a {
+    color: #7a35ff;
+    border-bottom-color: #7a35ff;
+}
+.light-mode .project-link a:hover {
+    color: #4b009e;
+}
+
+
+/* ======================== */
+/* 7. RESPONSIVE            */
+/* ======================== */
+@media(max-width: 768px) {
+    nav {
+        padding: 12px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav .links {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    nav .links a {
+        margin: 5px 8px 5px 0;
+        font-size: 0.9rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .typing-text {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    .photo-box {
+        width: 130px;
+        height: 130px;
+    }
+    section {
+        padding: 40px 6%;
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
