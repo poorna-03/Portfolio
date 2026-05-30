@@ -166,10 +166,9 @@ h2 {
     font-size: 1.2em;
     margin-right: 10px;
     color: #bb86ff;
-}
-
-.card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+}.card{
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(160, 110, 255, 0.1);
     padding: 25px;
     border-radius: 14px;
@@ -565,11 +564,15 @@ canvas.matrix{
 }
 
 }
-.about-section{
+/* ========================= */
+/* PIC2 BACKGROUND SECTIONS  */
+/* ========================= */
+
+.section-pic2{
     background:
     linear-gradient(
-        rgba(15,0,30,0.85),
-        rgba(15,0,30,0.85)
+        rgba(15,0,30,0.88),
+        rgba(15,0,30,0.88)
     ),
     url("pic2.jpg");
 
@@ -579,14 +582,20 @@ canvas.matrix{
     background-attachment:fixed;
 
     border-radius:20px;
-    padding:80px 6%;
+
+    margin-top:20px;
+    margin-bottom:20px;
 }
 
-.contact-section{
+/* ========================= */
+/* PIC3 BACKGROUND SECTIONS  */
+/* ========================= */
+
+.section-pic3{
     background:
     linear-gradient(
-        rgba(15,0,30,0.85),
-        rgba(15,0,30,0.85)
+        rgba(15,0,30,0.88),
+        rgba(15,0,30,0.88)
     ),
     url("pic3.jpg");
 
@@ -596,6 +605,8 @@ canvas.matrix{
     background-attachment:fixed;
 
     border-radius:20px;
-    padding:80px 6%;
+
+    margin-top:20px;
+    margin-bottom:20px;
 }
 
