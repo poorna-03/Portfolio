@@ -566,48 +566,36 @@ canvas.matrix{
 
 }
 .about-section{
-    position:relative;
-    overflow:hidden;
-    border-radius:20px;
-}
-
-.about-section{
     background:
     linear-gradient(
-        rgba(15,0,30,0.92),
-        rgba(15,0,30,0.92)
+        rgba(15,0,30,0.85),
+        rgba(15,0,30,0.85)
     ),
     url("pic2.jpg");
 
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     background-attachment:fixed;
 
     border-radius:20px;
+    padding:80px 6%;
 }
-.contact-section{
-    position:relative;
-    overflow:hidden;
-    border-radius:20px;
-}
-
 
 .contact-section{
     background:
     linear-gradient(
-        rgba(15,0,30,0.92),
-        rgba(15,0,30,0.92)
+        rgba(15,0,30,0.85),
+        rgba(15,0,30,0.85)
     ),
     url("pic3.jpg");
 
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     background-attachment:fixed;
 
     border-radius:20px;
+    padding:80px 6%;
 }
-.about-section > *,
-.contact-section > *{
-    position:relative;
-    z-index:1;
-}
+
