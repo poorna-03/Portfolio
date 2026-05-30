@@ -565,3 +565,45 @@ canvas.matrix{
 }
 
 }
+.about-section{
+    position:relative;
+}
+
+.about-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(15,0,30,0.92),
+        rgba(15,0,30,0.92)
+    ),
+    url("pic2.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-1;
+}
+.contact-section{
+    position:relative;
+}
+
+.contact-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(15,0,30,0.92),
+        rgba(15,0,30,0.92)
+    ),
+    url("pic3.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-1;
+}
