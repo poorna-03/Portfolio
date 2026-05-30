@@ -567,13 +567,11 @@ canvas.matrix{
 }
 .about-section{
     position:relative;
+    overflow:hidden;
+    border-radius:20px;
 }
 
-.about-section::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
+.about-section{
     background:
     linear-gradient(
         rgba(15,0,30,0.92),
@@ -583,18 +581,18 @@ canvas.matrix{
 
     background-size:cover;
     background-position:center;
+    background-attachment:fixed;
 
-    z-index:-1;
+    border-radius:20px;
 }
 .contact-section{
     position:relative;
+    overflow:hidden;
+    border-radius:20px;
 }
 
-.contact-section::before{
-    content:"";
-    position:absolute;
-    inset:0;
 
+.contact-section{
     background:
     linear-gradient(
         rgba(15,0,30,0.92),
@@ -604,6 +602,12 @@ canvas.matrix{
 
     background-size:cover;
     background-position:center;
+    background-attachment:fixed;
 
-    z-index:-1;
+    border-radius:20px;
+}
+.about-section > *,
+.contact-section > *{
+    position:relative;
+    z-index:1;
 }
