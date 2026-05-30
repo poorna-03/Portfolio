@@ -500,3 +500,68 @@ canvas.matrix {
 canvas.matrix{
     opacity:0.08;
 }
+.hero-container{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+}
+
+.hero-content{
+    flex:1;
+    text-align:left;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.photo-box{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    border:4px solid rgba(187,134,255,.4);
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 0 40px rgba(187,134,255,.5);
+}
+
+.hero-description{
+    max-width:600px;
+}
+
+.hero-social{
+    margin-top:25px;
+}
+
+.hero-social a{
+    margin-right:20px;
+    color:#bb86ff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.hero-social a:hover{
+    color:white;
+}
+
+@media(max-width:900px){
+
+.hero-container{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.photo-box{
+    width:220px;
+    height:220px;
+}
+
+}
